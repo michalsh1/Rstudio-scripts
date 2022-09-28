@@ -9,7 +9,7 @@ library(tibble)
 
 
 
-setwd("C:/Users/Michalsh/Documents/Programs and programming/R/taxons_get_names")
+setwd("C:/Users/michalsh/Documents/Programs and programming/R/Rstudio-scripts/taxons_get_names")
 
 
 create_empty_dataset=function(taxons_path){
@@ -102,16 +102,16 @@ find_eol_names= function(dataset){
   return(dataset)
 }
 
-taxon_path="C:/Users/Michalsh/Documents/Programs and programming/R/taxons_get_names/TAXONS1.xlsx"
+taxon_path="C:/Users/michalsh/Documents/Programs and programming/R/Rstudio-scripts/taxons_get_names/TAXONS.xlsx"
 empty_dataset=create_empty_dataset(taxon_path)
 dataset=find_eol_names(dataset=empty_dataset)
-new_file_name="TAXONS_names3"
+new_file_name="TAXONS_names"
 write_xlsx(dataset,path = paste(new_file_name,'.xlsx',sep=''))
 
 ----------------------------------------------------------------------------------------
 
 
-###find hebrew names only:
+###find Hebrew names only:
 find_heb_only_eol_names= function(dataset){
   for (row in seq(1,length(rownames(dataset)))){
     # print(row)
@@ -144,7 +144,7 @@ find_heb_only_eol_names= function(dataset){
   return(dataset)
 }
 
-taxon_path="C:/Users/Michalsh/Documents/Programs and programming/R/taxons_get_names/FISHES_FOR_HEB_NAMES.xlsx"
+taxon_path="C:/Users/michalsh/Documents/Programs and programming/R/Rstudio-scripts/taxons_get_names/FISHES_FOR_HEB_NAMES.xlsx"
 empty_dataset=create_empty_dataset(taxon_path)
 dataset=find_heb_only_eol_names(dataset=empty_dataset)
 new_file_name="FISHES_FOR_HEB_NAMES_names.xlsx"
@@ -179,10 +179,10 @@ find_valid_names= function(dataset){
   return(dataset)
 }
 
-taxon_path="C:/Users/Michalsh/Documents/Programs and programming/R/taxons_get_names/FISHES2.xlsx"
+taxon_path="C:/Users/michalsh/Documents/Programs and programming/R/Rstudio-scripts/taxons_get_names/FISHES_FOR_VALID_NAMES.xlsx"
 empty_dataset=create_empty_dataset(taxon_path)
 dataset=find_valid_names(dataset=empty_dataset)
-new_file_name="FISHES2_valid_names"
+new_file_name="FISHES_FOR_VALID_NAMES_valid_names"
 write_xlsx(dataset,path = paste(new_file_name,'.xlsx',sep=''))
 
 
