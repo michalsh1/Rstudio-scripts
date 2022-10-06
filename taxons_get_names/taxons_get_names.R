@@ -198,3 +198,8 @@ write_xlsx(dataset,path = paste(new_file_name,'.xlsx',sep=''))
 #xx[1]$gbif$sci$species
 
 sci="Chelinus undulatus"
+
+
+
+## try
+s=2
